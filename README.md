@@ -33,7 +33,7 @@ assertThat(primes.toArray(), arrayContaining(2,3));
 ```
 
 Awaitility is another gem you should not miss. It allows to repeat an operation until it succeed or a timeout occurs.
-It also can also nicely ignore exceptions and only return the last exception. This is ideal if you e.g. have an external rest service that will come up asynchronously to your test. Often this is covered with a sleep that has to be timed carefully to not be too short (causes test failures) or too long (wastes time). Awaitility solves this in a very nice way.
+It also can nicely ignore exceptions and only return the last exception. This is ideal if you e.g. have an external rest service that will come up asynchronously to your test. Often this is covered with a sleep that has to be timed carefully to not be too short (causes test failures) or too long (wastes time). Awaitility solves this in a very nice way.
 
 See [BaseTest.java](src/test/java/net/lr/example/testing/osgi/BaseTest.java) for how to add hamcrest and Awaitility
 as bundles.
