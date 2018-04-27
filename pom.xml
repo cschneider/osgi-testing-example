@@ -130,6 +130,12 @@
             <version>3.1.0</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.converter</artifactId>
+            <version>1.0.0</version>
+           <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>

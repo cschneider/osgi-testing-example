@@ -22,6 +22,14 @@ private Mydependency;
 See the package [net.lr.example.testing](src/test/java/net/lr/example/testing) for some hints how to use mockito 
 to inject dependencies into DS components. This covers mock, spy and capturing arguments.
 
+## Creating type safe configs on the fly
+
+In declarative services type safe configs are defined as annotations. Unfortunately it is quite hard 
+to instantiate or mock an annotation inside a test.
+
+[net.lr.example.testing.PrimeCalculatorServletTest](src/test/java/net/lr/example/testing/PrimeCalculatorServletTest.java) shows how to use the new OSGi converter spec to create the config
+annotation while retaining defaults defined in the annotation.
+
 ## Add hamcrest matchers and awaitility to pax exam tests
 
 Hamcrest provides a lot of nice and powerful matchers to junit. The example below shows how to compare
