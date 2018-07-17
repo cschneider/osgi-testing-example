@@ -1,5 +1,7 @@
 # OSGi testing tips and tricks
 
+[![Build Status](https://travis-ci.org/cschneider/osgi-testing-example.svg?branch=master)](https://travis-ci.org/cschneider/osgi-testing-example)
+
 In this repo I show some techniques to make testing your OSGi projects a lot simpler.
 
 ## Import into eclipse
