@@ -1,5 +1,6 @@
 package net.lr.example.testing.osgi;
 
+import static org.awaitility.Awaitility.await;
 import static org.hamcrest.Matchers.notNullValue;
 
 import java.io.BufferedReader;
@@ -14,7 +15,6 @@ import java.util.stream.Collectors;
 
 import javax.inject.Inject;
 
-import org.awaitility.Awaitility;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.ops4j.pax.exam.Configuration;
@@ -37,13 +37,18 @@ public class PrimeServletTest extends BaseTest {
 
     @Test
     public void test() throws URISyntaxException, MalformedURLException, IOException {
-        URL testUrl = new URL("http://localhost:8080/prime?max=10");
+        
         /*
          *  Retry to get the content for up to 10 seconds by default. 
          *  Use this if you have timing issues that can not be avoided using explicit service dependencies.
          */
-        String content = Awaitility.await().ignoreExceptions().until(() -> getContent(testUrl), notNullValue());
+        String content = await().ignoreExceptions().until(this::getTestContent, notNullValue());
         System.out.println(content);
+    }
+    
+    private String getTestContent() throws MalformedURLException, IOException {
+        URL testUrl = new URL("http://localhost:8080/prime?max=10");
+        return getContent(testUrl);
     }
 
     private String getContent(URL testUrl) throws IOException, MalformedURLException {
