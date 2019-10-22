@@ -39,8 +39,8 @@ public class BaseTest {
                 systemProperty("pax.exam.osgi.unresolved.fail").value("true"),
                 logback(),
                 junit(),
-                mavenBundle().groupId("org.apache.felix").artifactId("org.apache.felix.scr").version("2.0.14"),
-                mavenBundle().groupId("org.apache.felix").artifactId("org.apache.felix.configadmin").version("1.8.16"),
+                mavenBundle("org.apache.felix", "org.apache.felix.scr", "2.0.14"),
+                mavenBundle("org.apache.felix", "org.apache.felix.configadmin", "1.8.16"),
                 httpService(),
                 bundle("reference:file:target/classes/")
         );
